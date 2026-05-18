@@ -14,6 +14,8 @@ import { MobileMenu } from "./MobileMenu";
 
 const NAV_LINKS: NavLink[] = [
   { href: "#home", label: "Home" },
+  { href: "#skills", label: "Skills"},
+  { href: "#experience", label: "Experience"},
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -51,7 +53,7 @@ export default function Navbar() {
       />
       <motion.nav
         initial={{ y: 0, opacity: 1 }}
-        animate={{ y: scrollDirection === "down" ? "-100%" : "0", opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={spring.smooth}
         className="fixed top-0 left-0 right-0 z-50 w-full py-3 px-4 lg:px-6 pt-[calc(0.75rem+env(safe-area-inset-top,0px))]"
       >
