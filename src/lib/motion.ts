@@ -70,6 +70,35 @@ export const staggerContainer = {
   },
 };
 
+export const fadeInLeft = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: spring.smooth,
+  },
+};
+
+export const staggerSlow = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+export const bulletFadeIn = {
+  hidden: { opacity: 0, x: -16 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: spring.gentle,
+  },
+};
+
 export const buttonHover = { scale: 1.03, y: -2, transition: spring.snappy };
 export const buttonTap = { scale: 0.98, transition: spring.quick };
 export const iconButtonHover = { scale: 1.04, y: -2, transition: spring.snappy };

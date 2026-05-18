@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,10 +29,12 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-primary text-foreground`}> 
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-primary text-foreground`}
+      >
         <ThemeProvider>
-        <Navbar/>
-         {children}
+          <Navbar />
+          {children}
         </ThemeProvider>
       </body>
     </html>

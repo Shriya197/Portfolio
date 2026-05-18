@@ -5,18 +5,21 @@ import { arrayCheck, heroSocialLinks, leetcodeIcon} from "@/utils";
 import { motion } from "framer-motion";
 import { spring, fadeInUp, fadeInUpStagger, staggerContainer, fadeInScale, iconButtonHover, iconButtonTap } from "@/lib/motion";
 import { SECTION_MAX_WIDTH } from "@/lib/constants";
+import Experience from "./Experience";
+import Skills from "./Skills";
+import { calculateExperience } from "@/lib/experience";
 
 const Hero = () => {
-  const socialButtons = useMemo(
-    () =>
-      heroSocialLinks.map((s) => ({
+  const socialButtons = heroSocialLinks.map((s) => ({
         href: s.link,
         iconClass: s.icon,
         label: s.label ?? s.name,
         customIcon:  s.link.includes("leetcode") ? leetcodeIcon : undefined
-      })),
-    []
-  );
+      }));
+  
+
+  const exp = calculateExperience(2,2022);
+
   return (
     <section className={`w-full ${SECTION_MAX_WIDTH} mx-auto mt-20 lg:mt-24 pt-8 pb-6 px-4 sm:px-6 md:px-8 box-border`} id="home">
       <motion.div
@@ -30,13 +33,13 @@ const Hero = () => {
           variants={staggerContainer}
         >
           <motion.span
-            className="inline-block w-fit text-xs font-semibold tracking-wider text-accent uppercase mb-3 px-3 py-1 rounded-full bg-accent-soft border border-accent/20 mx-auto md:mx-0"
-            variants={fadeInUp}
-          >
+  className="badge-accent inline-block w-fit text-xs font-semibold tracking-wider uppercase mb-3 px-3 py-1 rounded-full border mx-auto md:mx-0"
+  variants={fadeInUp}
+>
             Frontend Focused Full Stack Developer
           </motion.span>
           <motion.h1
-            className="text-display font-bold tracking-tight text-foreground mb-4 break-words"
+            className="text-display font-bold tracking-tight text-foreground mb-4 break-words effect-gradient-text"
             variants={fadeInUp}
           >
             Shriya Singh
@@ -45,7 +48,7 @@ const Hero = () => {
             className="text-muted text-base md:text-lg leading-relaxed mb-8 max-w-4xl mx-auto"
             variants={fadeInUp}
           >
-          Software engineer with 4.5+ years of experience specializing in React, Next.js, and Angular to build high-performance, scalable web applications. My expertise extends across the full stack using Node.js and MongoDB, allowing me to bridge the gap between complex backend logic and seamless user interfaces. Beyond writing code, 
+          Software engineer with {exp} years of experience specializing in React, Next.js, and Angular to build high-performance, scalable web applications. My expertise extends across the full stack using Node.js and MongoDB, allowing me to bridge the gap between complex backend logic and seamless user interfaces. Beyond writing code, 
           I am a continuous learner dedicated to mastering modern architectural patterns and evolving my technical skill set. I thrive on solving intricate problems and staying ahead of the curve in the ever-changing web ecosystem.          
           </motion.p>
           <motion.div
@@ -79,6 +82,26 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
+      </motion.div>
+      <motion.div
+        className="mt-8 rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ...spring.smooth, delay: 0.1 }}
+      >
+        <div className="p-5 md:p-6">
+          <Skills/>
+        </div>
+      </motion.div>
+      <motion.div
+        className="mt-8 rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ...spring.smooth, delay: 0.1 }}
+      >
+        <div className="p-5 md:p-6">
+          <Experience/>
+        </div>
       </motion.div>
     </section>
   );
