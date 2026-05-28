@@ -143,7 +143,7 @@ export const PROJECTS: Project[] = [
       { label: "TanStack Query", color: "#f97316" },
     ],
     featured: true,
-    liveUrl: "https://devpulse-sandy.vercel.app/",
+    liveUrl: "https://devpulse-ss.vercel.app/",
     githubUrl: "https://github.com/Shriya197/devPulse",
   },
   {

@@ -72,7 +72,7 @@ export default function Navbar() {
                 href="/"
                 className="hover:text-accent transition-all duration-200 ease-out"
               >
-                Portfolio
+                SS.
               </Link>
             </motion.div>
 
