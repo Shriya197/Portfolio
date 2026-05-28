@@ -21,16 +21,19 @@ export interface ExperienceItem {
   endDate?: string;
   description?: string[];
 }
-
 export interface Project {
-  name: string;
-  description: string[];
+  title: string;
+  description: string;
+  tags: { label: string; color: string }[];
+  featured?: boolean;
+  private?: boolean;
+  liveUrl?: string;
+  githubUrl?: string;
 }
 export interface SkillCategory {
   title: string;
   items: string[];
 }
-
 
 export function arrayCheck<T>(array: T[] | null | undefined): array is T[] {
   return (array?.length ?? 0) > 0;

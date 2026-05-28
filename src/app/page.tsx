@@ -7,6 +7,8 @@ import { spring } from "@/lib/motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import { SECTION_MAX_WIDTH } from "@/lib/constants";
+import Projects from "@/components/Project";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const homeRef = useRef(null);
@@ -24,7 +26,10 @@ export default function Home() {
       </motion.section>
 
       {/* ── Skills ── */}
-      <section id="skills" className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}>
+      <section
+        id="skills"
+        className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}
+      >
         <motion.div
           className="rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
           initial={{ opacity: 0, y: 24 }}
@@ -39,7 +44,10 @@ export default function Home() {
       </section>
 
       {/* ── Experience ── */}
-      <section id="experience" className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}>
+      <section
+        id="experience"
+        className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}
+      >
         <motion.div
           className="rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
           initial={{ opacity: 0, y: 24 }}
@@ -48,7 +56,43 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="p-6 md:p-10">
-          <Experience />
+            <Experience />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── Projects ── */}
+      <section
+        id="projects"
+        className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}
+      >
+        <motion.div
+          className="rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="p-6 md:p-10">
+            <Projects />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── Contact ── */}
+      <section
+        id="contact"
+        className={`w-full ${SECTION_MAX_WIDTH} mx-auto px-4 sm:px-6 md:px-8 py-20 md:py-28`}
+      >
+        <motion.div
+          className="rounded-3xl bg-card/80 dark:bg-card/90 backdrop-blur-sm shadow-soft dark:shadow-soft-dark overflow-hidden"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="p-6 md:p-10">
+            <Contact />
           </div>
         </motion.div>
       </section>
